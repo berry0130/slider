@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>slider</title>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+        var socket = io.connect();
+        socket.on('connect', function() {
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            var slider2 = document.getElementById("myRange2");
+            var output2 = document.getElementById("demo2");
+            socket.emit('connect_event', {data: slider.value});
+            output.innerHTML = slider.value;
+            slider.oninput = function() {
+              socket.emit('connect_event', {data: this.value});
+              output.innerHTML = this.value;
+          }
+          socket.emit('connect_event', {data2: slider2.value});
+            output2.innerHTML = slider2.value;
+            slider2.oninput = function() {
+              socket.emit('connect_event', {data2: this.value});
+              output2.innerHTML = this.value;
+          }
+            
+        });
+
+
+        
+        
+});
+</script>   
+<style>
+html,body{
+  height: 50%; 
+  margin: 0; 
+  padding: 0;
+  background-color: wheat;
+}
+.slidecontainer {
+  /* height: 30%; */
+  position:relative;
+  width: 50%;
+  margin-top: 10%;
+  margin-left: 20%;
+  vertical-align: middle;
+
+}
+
+.slider {
+  -webkit-appearance: none;
+  vertical-align: middle;
+  margin-top: 30%;
+  transform:rotate(90deg);
+  position:relative;
+  width: 50%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.slidecontainer2 {
+  width: 50%;
+  margin-left: 50%;
+}
+
+.slider2 {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider2:hover {
+  opacity: 1;
+}
+
+.slider2::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider2::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+
+<div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  <p>Value: <span id="demo"></span></p>
+</div>
+<div class="slidecontainer2">
+    <input type="range" min="1" max="100" value="50" class="slider2" id="myRange2">
+    <p>Value: <span id="demo2"></span> </p>
+  </div>
+
+
+</body>
+</html>

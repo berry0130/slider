@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    background: #000;
+    height: 100%;
+    overflow:hidden;
+}
+.main{
+    float:left;
+    width: 50%;
+    margin: 24% auto;
+    position: relative;
+    background: cornflowerblue;
+}
+.main2{
+    float:right;
+    width: 50%;
+    margin: 24% auto;
+    position: relative;
+}
+#myRange{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 7px;
+    outline: none;
+    border-radius: 3px;
+}
+#myRange2{
+    -webkit-appearance: none;
+    transform:rotate(90deg);
+    width: 100%;
+    height: 7px;
+    outline: none;
+    border-radius: 3px;
+}
+#myRange::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: relative;
+    position: relative;
+
+}
+#myRange2::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: relative;
+    position: relative;
+    -webkit-appearance: slider-vertical;
+
+}
+#selector{
+    width: 48px;
+    height: 104px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+#selector2{
+    width: 48px;
+    height: 104px;
+    position: absolute;
+    transform:rotate(90deg);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.butt{
+    height: 48px;
+    width: 48px;
+    background: yellowgreen;
+    background-position:center;
+    border-radius:50%;
+    position: absolute;
+    bottom: 0;
+}
+.butt2{
+    height: 48px;
+    width: 48px;
+    background: yellowgreen;
+    background-position:center;
+    border-radius:50%;
+    position: absolute;
+    bottom: 0;
+}
+#selval{
+    height: 40px;
+    width: 48px;
+    position: absolute;
+    background: #ffd200;
+    border-radius:4px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+#selval2{
+    height: 40px;
+    width: 48px;
+    position: absolute;
+    background: #ffd200;
+    border-radius:4px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+#selval::after{
+    content: '';
+    border-top: 17px solid #ffd200;
+    border-left: 24px solid #000;
+    border-right: 24px solid #000;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+#selval2::after{
+    content: '';
+    border-top: 17px solid #ffd200;
+    border-left: 24px solid #000;
+    border-right: 24px solid #000;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}

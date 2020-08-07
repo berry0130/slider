@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>slider_ver2</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            <div id="selector">
+                <div class="butt"></div>
+                <div id="selval"></div>
+            </div>
+        </div>
+
+        <div class="main2">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+            <div id="selector2">
+                <div class="butt2"></div>
+                <div id="selval2"></div>
+            </div>
+        </div>
+       
+        <script>
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("selector");
+            var selval = document.getElementById("selval");
+            selval.innerHTML = slider.value;
+            slider.oninput = function() {
+                output.style.left = this.value + "%";
+                selval.innerHTML = this.value;
+            }
+        </script>
+
+        <script>
+            var slider2 = document.getElementById("myRange2");
+            var output2 = document.getElementById("selector2");
+            var selval2 = document.getElementById("selval2");
+            selval2.innerHTML = slider2.value;
+            slider2.oninput = function() {
+                output2.style.left = this.value + "%";
+                selval2.innerHTML = this.value;
+            }
+        </script>
+            
+    </body>
+</html>

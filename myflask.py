@@ -11,7 +11,7 @@ my_value = 5278
 
 @app.route('/')
 def index():
-    return render_template('slider_bar.html')
+    return render_template('slider_bar_test.html')
 
 @socketio.on('client_event')
 def client_msg(msg):
